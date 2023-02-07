@@ -10,12 +10,17 @@
   }
   
   @mixin atMedium {
+    position: fixed;
     background-color: rgba(47, 85, 114, .3);
+
+    &--dark {
+      background-color: rgba(23, 51, 72, .85);
+    }
   }
 
   &__btn-container {
     @mixin atMedium {
-      order: 2;
+      float: right;
     }
   }
 
@@ -23,6 +28,7 @@
     position: absolute;
     top: 0;
     left: 50%;
+    transition: transform .3s ease-out;
     transform: translateX(-50%) scale(.8);
     transform-origin: 50% 0;
     background-color: $mainBlue;
@@ -31,6 +37,10 @@
     @mixin atMedium {
       left: auto;
       transform: translateX(0);
+
+      .site-header--dark & {
+        transform: scale(.55);
+      }
     }
   }
 
@@ -111,8 +121,6 @@
     text-align: center;
 
     @mixin atMedium {
-      display: flex;
-      justify-content: flex-end;
       opacity: 1;
       z-index: 1;
       padding-top: 0;
