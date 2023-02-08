@@ -11,6 +11,8 @@
 *.sass-cache
 node_modules/
 .tmp/
+.docs/**/*.js
+.docs/**/*.css
 
 # OS or Editor folders
 .DS_Store
